@@ -1,8 +1,8 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 import "./input.css";
 
-interface InputProps {
-  size?: "small" | "medium" | "large";
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  size?: number;
   placeholder?: string;
   onChange?: () => void;
   label?: string;
@@ -11,12 +11,12 @@ interface InputProps {
 }
 
 export const Input = ({
-  size = "small",
+  size,
   placeholder = "Enter Value",
   label,
   type = "text",
   name,
-  ...props
+  ...rest
 }: InputProps) => {
   return (
     <>

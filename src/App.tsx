@@ -16,14 +16,7 @@ function App() {
           is now.”
         </p>
         <div className="inputSection">
-          {/* <Input 
-          onInput={(e) => setValue(e.target as HTMLInputElement)} 
-          size="large" 
-          
-          
-          /> */}
-
-          Testing commit
+          <Input onInput={(e) => setValue(parseInt(e.currentTarget.value))} />
           <Button label="Button" onClick={() => {}} primary />
         </div>
         <div className="viewChanges">

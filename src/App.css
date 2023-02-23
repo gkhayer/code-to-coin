@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  background: url(images/birdView.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .App-logo {
@@ -14,7 +17,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +28,16 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.inputSection {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  align-items: baseline;
 }
 
 @keyframes App-logo-spin {

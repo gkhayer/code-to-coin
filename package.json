@@ -1,6 +1,6 @@
 {
   "homepage": "https://gkhayer.github.io/code-to-coin/",
-  "name": "berry-convert",
+  "name": "code-convert",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

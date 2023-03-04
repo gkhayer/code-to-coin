@@ -10,7 +10,7 @@ var requestURL = "https://api.exchangerate.host/convert?from=USD&to=INR";
 
 function App() {
   const [inputCode, setInputCode] = useState(0);
-  const [rate, setRate] = useState<number>();
+  const [rate, setRate] = useState<number>(0);
 
   useEffect(() => {
     const api = async () => {
@@ -30,7 +30,7 @@ function App() {
     let inputByCode = inputValue * 3.6;
     let netPrice = inputByCode * 0.7 + inputByCode;
     if (rate) {
-      setInputCode(netPrice / rate);
+      setInputCode((netPrice / rate) + 9);
     }
   };
 

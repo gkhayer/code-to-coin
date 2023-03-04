@@ -28,7 +28,7 @@ function App() {
     event.preventDefault();
     let inputValue = parseInt(event.currentTarget.value);
     let inputByCode = inputValue * 3.6;
-    let netPrice = inputByCode * 0.6 + inputByCode;
+    let netPrice = inputByCode * 0.7 + inputByCode;
     if (rate) {
       setInputCode(netPrice / rate);
     }

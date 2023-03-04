@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/code-to-coin/static/css/main.ad3ac606.css",
+    "main.js": "/code-to-coin/static/js/main.dc7c6b2c.js",
+    "static/js/787.56c8633c.chunk.js": "/code-to-coin/static/js/787.56c8633c.chunk.js",
+    "static/media/birdView.jpg": "/code-to-coin/static/media/birdView.e4d692b0686146df39f3.jpg",
+    "index.html": "/code-to-coin/index.html",
+    "main.ad3ac606.css.map": "/code-to-coin/static/css/main.ad3ac606.css.map",
+    "main.dc7c6b2c.js.map": "/code-to-coin/static/js/main.dc7c6b2c.js.map",
+    "787.56c8633c.chunk.js.map": "/code-to-coin/static/js/787.56c8633c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad3ac606.css",
+    "static/js/main.dc7c6b2c.js"
+  ]
+}

@@ -6,11 +6,11 @@ import Input from "./stories/Input";
 type resultProps = {
   result: number;
 };
-var requestURL = "https://api.exchangerate.host/convert?from=INR&to=USD";
+var requestURL = "https://api.exchangerate.host/convert?from=USD&to=INR";
 
 function App() {
-  const [value, setValue] = useState(0);
-  const [data, setData] = useState<resultProps[]>([]);
+  const [inputCode, setInputCode] = useState(0);
+  const [rate, setRate] = useState<number>();
 
   useEffect(() => {
     const api = async () => {
@@ -18,43 +18,20 @@ function App() {
         method: "GET",
       });
       const jsonData = await data2.json();
-      setData(jsonData.result);
+      setRate(jsonData.result);
     };
 
     api();
   }, []);
 
-  const handleQuery = async () => {
-    var myHeaders = new Headers();
-    myHeaders.append("access_key", "UYagxQXK9SnfgX5RGq2jkM3mSQYASX0v");
-    fetch(requestURL, {
-      method: "GET",
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin",
-    })
-      .then((res) => res.json())
-      .then((data2) => {
-        setData(data2);
-      });
-  };
-
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setValue(parseInt(event.currentTarget.value));
-  };
-
-  // first input (india rate)
-  const handleCode = () => {
-    if (!value) {
-      return;
+    let inputValue = parseInt(event.currentTarget.value);
+    let inputByCode = inputValue * 3.6;
+    let netPrice = inputByCode * 0.6 + inputByCode;
+    if (rate) {
+      setInputCode(netPrice / rate);
     }
-    return value * 3.6;
-
-    // get conversion rate api
-    // add shipping value
-    // add gain
-    // ceil price
   };
 
   return (
@@ -70,14 +47,11 @@ function App() {
           onChange={(e) => handleChange(e)}
           name="code"
           type="number"
-          value={value}
+          value={inputCode}
         />
-        {/* <Button label="Coin Value" onClick={() => handleClick()} primary /> */}
         <div className="viewChanges">
-          <p>{handleCode()}</p>
+          <p>${Math.ceil(inputCode)}</p>
         </div>
-        {/* <button onClick={handleQuery}>test</button> */}
-        <p>{data && JSON.stringify(data)}</p>
       </header>
     </div>
   );

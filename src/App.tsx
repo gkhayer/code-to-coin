@@ -47,7 +47,7 @@ function App() {
           value={inputCode}
         />
         <div className="viewChanges">
-          <span>Cost is: ${Math.ceil(inputCode)}</span>
+          <span>Cost is: ${!inputCode ? 0 : Math.ceil(inputCode)}</span>
         </div>
       </header>
     </div>

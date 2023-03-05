@@ -30,18 +30,18 @@ function App() {
     let inputByCode = inputValue * 3.6;
     let netPrice = inputByCode * 0.7 + inputByCode;
     if (rate) {
-      setInputCode((netPrice / rate) + 9);
+      setInputCode(netPrice / rate + 9);
     }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        Code To Coin
-        <p>
+        <h1>Code To Coin</h1>
+        <div>
           “The best time to plant a tree was 20 years ago. The second best time
           is now.”
-        </p>
+        </div>
         <Input
           placeholder="Enter Code Number"
           onChange={(e) => handleChange(e)}
@@ -50,7 +50,7 @@ function App() {
           value={inputCode}
         />
         <div className="viewChanges">
-          <p>${Math.ceil(inputCode)}</p>
+          <span>Cost is: ${Math.ceil(inputCode)}</span>
         </div>
       </header>
     </div>

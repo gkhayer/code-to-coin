@@ -24,6 +24,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 10%;
+}
+
+h1 {
+  color: #ffc0cb;
 }
 
 .App-link {

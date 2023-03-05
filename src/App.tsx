@@ -3,13 +3,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Input from "./stories/Input";
 
-type resultProps = {
-  result: number;
-};
 var requestURL = "https://api.exchangerate.host/convert?from=USD&to=INR";
 
 function App() {
-  const [inputCode, setInputCode] = useState(0);
+  const [inputCode, setInputCode] = useState<number>(0);
   const [rate, setRate] = useState<number>(0);
 
   useEffect(() => {
